@@ -13,10 +13,10 @@ const peticion = fetch(urlPost,{
     peticion
     .then((ans)=>{return ans.json()})
     .then((resp)=>{
-      const reslt = "1000.bc4955464bf10f47ec09a3c80af67b95.6d42b52d0bb6c1c23e7f67e01bc812bc";
+      const reslt = resp.access_token;
       return app.get("*", async (req,res)=>{
         const response = await fetch(urlGet,{
-        method: "GET",
+        method: 'GET',
         headers:{
             'Authorization':`Zoho-oauthtoken ${reslt}`,
            }})
