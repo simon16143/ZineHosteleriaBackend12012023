@@ -23,8 +23,19 @@ const peticion = fetch(urlPost,{
         headers:{
             'Authorization':`Zoho-oauthtoken ${reslt}`,
           }})
-          res.json(await response.json())
-           
+          const result = await response.json()
+          const test = result.data
+          const test2 = test.map(function(product){
+                if (true){
+                 product.Product_Images[0] = "https://creator.zoho.eu" + product.Product_Images[0].display_value
+                return product.Product_Images[0]
+                }
+              })
+          
+          res.json(test)
+          
+
+          
         })
       })
 app.listen(PORT, () => {console.log(`Listening on port ${PORT}`)})
