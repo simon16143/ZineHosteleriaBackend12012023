@@ -4,20 +4,10 @@ const fetch = require("node-fetch")
 const bodyParser = require("body-parser");
 const cors = require("cors")
 const PORT = process.env.PORT || 4000;
-var whitelist = ['https://zine-hosteleria-frontend12012023.onrender.com']
-var corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
-}
 app.use(bodyParser.json());
 const urlPost = ("https://accounts.zoho.eu/oauth/v2/token?refresh_token=1000.3dbdad6937dc0800c4dcc662cd14d173.86efb18e337989bebb3ff4c05582c94c&client_id=1000.NQL17JHK3Y62Y178TO0E3FQC6MBQJV&client_secret=5d04ad135862e7313377484af55efa1f41c1f49a39&grant_type=refresh_token")
 const urlGet = "https://creator.zoho.eu/api/v2/hostienda1/Product-Catalog/report/Product_Details";
-app.use(cors(corsOptions))
+app.use(cors())
 app.get
 const peticion = fetch(urlPost,{
       method: 'POST',
