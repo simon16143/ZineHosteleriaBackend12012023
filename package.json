@@ -8,12 +8,15 @@
     "dev": "node --watch server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-   "proxy":{
-    "https://zine-hosteleria-frontend12012023.onrender.com/*":{
-      "target": "https://zine-hosteleria-frontend12012023.onrender.com",
-       "changeOrigin": true
+ "proxy": {
+    "/proxy": {
+        "target": "https://creator.zoho.eu",
+        "pathRewrite": {
+                "^/proxy" : ""
+        },
+        "changeOrigin": true
     }
-  },
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
