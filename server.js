@@ -25,13 +25,14 @@ const peticion = fetch(urlPost,{
           }})
           const result = await response.json()
           const test = result.data
-          test.map(function(product){
+         test.map(function(product){
                 if (true){
                  product.Product_Images[0] = "https://creator.zoho.eu" + product.Product_Images[0].display_value
-                return product.Product_Images
+                return product.Product_Images[0]
                 }
               })
-         
+          
+   
           res.json(test)
           
 
